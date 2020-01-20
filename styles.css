@@ -1,0 +1,186 @@
+/* font imports */
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Ibarra+Real+Nova&display=swap');
+
+body, html{
+    height: 100%;
+    margin: 0;
+/* Defining color variables */
+    --transparent-bg-color:  rgba(15,15,15,0.1);
+    --main-bg-color: #0d0d0d;
+    background-color: var(--main-bg-color);
+    --secondary-bg-color: #f9f4f5;
+    --main-text-color: #0487D9;
+    --secondary-text-color:#023E73;
+/* Defining font variables */
+    --main-font:'Ibarra Real Nova', serif;
+    --secondary-font:'IM Fell Great Primer SC', serif;
+}
+/* removing styles on link and list elements */
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    padding-inline-start: 0;
+}
+/* General styles */
+.title{
+    color: var(--secondary-bg-color);
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--main-font);
+}
+/* styles for header and to replicate table layout */
+#top-section{
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(./img/hero-1.jpg);
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* nav menu */
+#main-nav{
+    background-color: var(--transparent-bg-color);
+    height: 15%;
+    width: 100%;
+    min-width: 100%;
+}
+
+#main-nav>ul{
+    display: flex;
+    justify-content: space-evenly;
+    margin-block-start: 0;
+    margin-block-end: 2em;
+    padding-top: 1em;
+}
+
+#main-nav a{
+    font-size: 1.15em;
+    text-transform: uppercase;
+}
+
+#main-nav a:link, a:visited{
+    color: var(--main-text-color);
+}
+
+.main-links:hover{
+    color: var(--secondary-bg-color);
+}
+
+
+/* rounding the img element */
+#profile-pic{
+    align-self: center;
+    border-radius: 25%;
+    height: 260px;
+    margin: auto 0;
+}
+
+.intro{
+    width: 90%;
+    /* adjust the stretch and center the text. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#name{
+    font-size: 3em;
+    margin: .67em auto;
+    font-family: var(--secondary-font);
+}
+
+.intro>h2{
+    font-size: 2em;
+    margin: .67em auto;
+    font-family: var(--main-font);
+}
+
+.intro > p{
+    color: var(--secondary-bg-color);
+    font-size: 1.67em;
+    text-align: justify;
+    font-family: var(--main-font);
+    line-height: 1.33em;
+}
+/* main container */
+main{
+    width: 100%;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+/* projects section */
+#projects{
+    width: 97.5%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    grid-template-rows: repeat( 2, 1fr);
+    grid-gap: 1.5em 1.5em;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#pj-title{
+    background-color: var(--secondary-text-color);
+}
+
+.pj-cnt{
+    box-sizing: border-box;
+    height: 20em;
+    background-color: rgba(255,255,255,0.9);
+    margin: 0;
+    box-shadow: 0 2px 4px 0 rgba(255,255,255,0.4);
+    transition: 0.3s;
+}
+
+.pj-cnt:hover{
+    box-shadow: 0 2px 8px 0 rgba(255,255,255,0.5);
+}
+
+#skills{
+    height: auto;
+}
+
+#skills-title{
+    background-color: var(--secondary-text-color);
+    color: var(--secondary-bg-color);
+}
+
+/* media queries */
+@media screen and (max-width: 600px){
+    body,html{
+        font-size: 10px;
+    }
+    .intro{
+        width: 100%;
+    }
+    #name{
+        font-size: 3rem;
+    }
+
+    #projects{
+        grid-template-columns: 90%;
+        grid-template-rows: repeat(5, 1fr);
+    }
+}
